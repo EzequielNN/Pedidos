@@ -1,4 +1,5 @@
 from calendar import c
+from distutils.cmd import Command
 from tkinter import *
 import tkinter
 import sqlite3
@@ -7,33 +8,43 @@ from turtle import color
 
 class Gui():
 
+    
     window = Tk()
     window.wm_title("Pedidos")
+    window.geometry("600x390")
+    
+    
+   
+    
+    
+    txtNumeropedido = StringVar()
+    txtCliente = StringVar()
+    txtEndereco = StringVar()
+    txtEntregador = StringVar()
+    txtFormapagamento = StringVar()
 
-    txtNumeropedido = StringVar
-    txtCliente = StringVar
-    txtEndereco = StringVar
-    txtEntregador = StringVar
-    txtFormapagamento = StringVar
-
-    lblnumeropedido = Label(window, text=("Numero do pedido"))
+    lblnumeropedido = Label(window, text=("Data do pedido"))
     lblcliente = Label(window, text=("Nome do cliente"))
     lblendereco = Label(window, text=("Endereço do cliente"))
     lblentregador = Label(window, text=("Entregador responsavel"))
     lblformapagamento = Label(window, text=("Forma de pagamento"))
 
+    
     entnumeropedido = Entry(window, textvariable=txtNumeropedido)
     entcliente = Entry(window, textvariable=txtCliente)
     entendereco = Entry(window, textvariable=txtEndereco)
     ententregador = Entry(window, textvariable=txtEntregador)
     entformapagamento = Entry(window, textvariable=txtFormapagamento)
 
-    listClientes = Listbox(window)
+
+
+
+    listClientes = Listbox(window, width=30, height=15)
     scrollClientes = Scrollbar(window)
 
     btnVertodos = Button(window, text="Ver Todos")
     btnBuscar = Button(window, text="Buscar pedido")
-    btnInserir = Button(window, text="Inserir")
+    btnInserir = Button(window, text="Inserir", command=limpa)
     btnUpdate = Button(window, text="Atualizar Selecionados")
     btnDel = Button(window, text="Deletar Selecionados")
     btnClose = Button(window, text="Fechar")
@@ -78,6 +89,4 @@ class Gui():
     def run(self):
         Gui.window.mainloop()
         
-        
-        
-        
+    
