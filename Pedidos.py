@@ -3,20 +3,15 @@ from distutils.cmd import Command
 from tkinter import *
 import tkinter
 import sqlite3
-from turtle import color
+from turtle import color, left
 
 
 class Gui():
 
-    
     window = Tk()
     window.wm_title("Pedidos")
-    window.geometry("600x390")
-    
-    
-   
-    
-    
+    window.geometry("760x450")
+
     txtNumeropedido = StringVar()
     txtCliente = StringVar()
     txtEndereco = StringVar()
@@ -29,25 +24,29 @@ class Gui():
     lblentregador = Label(window, text=("Entregador responsavel"))
     lblformapagamento = Label(window, text=("Forma de pagamento"))
 
-    
     entnumeropedido = Entry(window, textvariable=txtNumeropedido)
     entcliente = Entry(window, textvariable=txtCliente)
     entendereco = Entry(window, textvariable=txtEndereco)
     ententregador = Entry(window, textvariable=txtEntregador)
     entformapagamento = Entry(window, textvariable=txtFormapagamento)
 
-
-
-
-    listClientes = Listbox(window, width=30, height=15)
+    listClientes = Listbox(window, width=50, height=15)
     scrollClientes = Scrollbar(window)
 
     btnVertodos = Button(window, text="Ver Todos")
     btnBuscar = Button(window, text="Buscar pedido")
-    btnInserir = Button(window, text="Inserir", command=limpa)
+    btnInserir = Button(window, text="Inserir")
     btnUpdate = Button(window, text="Atualizar Selecionados")
     btnDel = Button(window, text="Deletar Selecionados")
     btnClose = Button(window, text="Fechar")
+
+    pedidoz = Label(window, text="Pedidos")
+    pedidoz.grid(row=0, column=2)
+
+ 
+
+    btnlimpar = Button(window, text="limpar")
+    
 
     lblnumeropedido.grid(row=0, column=0)
     lblcliente.grid(row=1, column=0)
@@ -59,14 +58,15 @@ class Gui():
     entendereco.grid(row=2, column=1)
     ententregador.grid(row=3, column=1)
     entformapagamento.grid(row=4, column=1)
-    listClientes.grid(row=0, column=2, rowspan=10)
-    scrollClientes.grid(row=0, column=6, rowspan=10)
-    btnVertodos.grid(row=5, column=0, columnspan=2)
-    btnBuscar.grid(row=6, column=0, columnspan=2)
-    btnInserir.grid(row=7, column=0, columnspan=2)
-    btnUpdate.grid(row=8, column=0, columnspan=2)
-    btnDel.grid(row=9, column=0, columnspan=2)
-    btnClose.grid(row=10, column=0, columnspan=2)
+    listClientes.grid(row=1, column=2, rowspan=10)
+    scrollClientes.grid(row=1, column=6, rowspan=10)
+    btnlimpar.grid(row=5, column=0)
+    btnVertodos.grid(row=6, column=0, columnspan=2)
+    btnBuscar.grid(row=7, column=0, columnspan=2)
+    btnInserir.grid(row=8, column=0, columnspan=2)
+    btnUpdate.grid(row=9, column=0, columnspan=2)
+    btnDel.grid(row=10, column=0, columnspan=2)
+    btnClose.grid(row=11, column=0, columnspan=2)
 
     listClientes.configure(yscrollcommand=scrollClientes.set)
     scrollClientes.configure(command=listClientes.yview)
@@ -88,5 +88,10 @@ class Gui():
 
     def run(self):
         Gui.window.mainloop()
-        
-    
+
+    n_rows = 10
+    n_columns = 10
+    for i in range(n_rows):
+        window.grid_rowconfigure(i,  weight=1)
+    for i in range(n_columns):
+        window.grid_columnconfigure(i,  weight=1)
