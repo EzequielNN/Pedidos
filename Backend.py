@@ -61,6 +61,9 @@ def view():
     return rows
 
 
+
+
+ 
 def insert(Numero_do_pedido, Cliente, Endereço, Entregador, Forma_de_Pagamento):
     trans = TransactionObject()
     trans.connect()

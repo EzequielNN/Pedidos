@@ -1,10 +1,14 @@
-
+from calendar import c
 from distutils.cmd import Command
 from tkinter import *
 import tkinter
 import sqlite3
 from turtle import color, left
+from time import strftime as time
+import time
 
+
+    
 
 class Gui():
 
@@ -95,3 +99,15 @@ class Gui():
         window.grid_rowconfigure(i,  weight=1)
     for i in range(n_columns):
         window.grid_columnconfigure(i,  weight=1)
+
+  
+    from datetime import datetime
+
+    data_e_hora_atuais = datetime.now()
+    data_e_hora_em_texto = data_e_hora_atuais.strftime('%d/%m/%Y')
+    
+    dataehora = Label(window, text=data_e_hora_em_texto)
+    
+    dataehora.grid(row=0, column=2)
+    
+    
