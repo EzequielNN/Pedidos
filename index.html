@@ -542,8 +542,8 @@
        Floating CTA — z-index 1001 (above grain overlay 999
        and above header 100)
        ===================================================== */
-    .float-cta {
-      position: fixed;
+    #floatCta {
+      position: fixed !important;
       bottom: 32px;
       right: 32px;
       z-index: 1001;
@@ -562,39 +562,32 @@
       opacity: 0;
       transform: translateY(16px);
       pointer-events: none;
-      transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
-                  transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
-                  box-shadow 0.4s ease;
+      transition: opacity 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
       overflow: hidden;
-      will-change: transform, opacity;
     }
-    .float-cta::before {
+    #floatCta::before {
       content: '';
       position: absolute;
       inset: 0;
       background: linear-gradient(135deg, var(--gold-bright), var(--gold));
       opacity: 0;
-      transition: opacity 0.5s;
+      transition: opacity 0.4s;
     }
-    .float-cta.visible {
+    #floatCta.visible {
       opacity: 1;
       transform: translateY(0);
       pointer-events: auto;
     }
-    .float-cta.snapping {
-      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
-                  opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1) !important;
-    }
-    .float-cta:hover {
+    #floatCta:hover {
       box-shadow: 0 12px 48px rgba(196,150,58,0.4), 0 4px 16px rgba(0,0,0,0.4);
     }
-    .float-cta:hover::before { opacity: 1; }
-    .float-cta svg,
-    .float-cta span { position: relative; z-index: 1; }
-    .float-cta .btn-arrow {
-      transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    #floatCta:hover::before { opacity: 1; }
+    #floatCta svg,
+    #floatCta span { position: relative; z-index: 1; }
+    #floatCta .btn-arrow {
+      transition: transform 0.4s ease;
     }
-    .float-cta:hover .btn-arrow { transform: translateX(4px); }
+    #floatCta:hover .btn-arrow { transform: translateX(4px); }
 
     /* Animations */
     @keyframes fadeUp {
@@ -671,7 +664,7 @@
       .btn { padding: 18px 36px; font-size: 10px; }
 
       /* Floating CTA: compact on mobile */
-      .float-cta {
+      #floatCta {
         bottom: 20px;
         right: 16px;
         padding: 16px 28px;
@@ -679,7 +672,7 @@
         gap: 12px;
         letter-spacing: 0.18em;
       }
-      .float-cta .btn-arrow { display: none; }
+      #floatCta .btn-arrow { display: none; }
     }
   </style>
 
@@ -885,77 +878,31 @@
       }
     }, { passive: true });
 
-    // Floating CTA — aparece após o hero e encaixa no botão estático ao chegar nele
+    // Floating CTA — aparece após o hero sair da tela, some ao chegar no botão estático
     const floatCta = document.getElementById('floatCta');
     const heroEl = document.querySelector('.hero');
     const staticCtaBtn = document.querySelector('.cta .btn');
 
-    let heroInView = true;
-    let ctaBtnInView = false;
-    let snapped = false;
+    let heroVisible = true;
+    let ctaVisible = false;
 
-    function showFloat() {
-      // Desativa transição durante o reset para evitar salto visual
-      floatCta.style.transition = 'none';
-      floatCta.classList.remove('snapping');
-      floatCta.style.transform = '';
-      floatCta.style.opacity = '';
-      floatCta.style.pointerEvents = '';
-      snapped = false;
-      requestAnimationFrame(() => {
-        floatCta.style.transition = '';
+    function updateFloat() {
+      if (!heroVisible && !ctaVisible) {
         floatCta.classList.add('visible');
-      });
-    }
-
-    function hideFloat() {
-      floatCta.classList.remove('visible', 'snapping');
-      floatCta.style.transform = '';
-      floatCta.style.opacity = '';
-      floatCta.style.pointerEvents = 'none';
-      snapped = false;
-    }
-
-    function snapToStatic() {
-      const floatRect = floatCta.getBoundingClientRect();
-      const staticRect = staticCtaBtn.getBoundingClientRect();
-      const dx = staticRect.left - floatRect.left;
-      const dy = staticRect.top - floatRect.top;
-
-      snapped = true;
-      floatCta.classList.add('snapping');
-      floatCta.style.transform = 'translate(' + dx + 'px, ' + dy + 'px)';
-      floatCta.style.opacity = '0';
-      floatCta.style.pointerEvents = 'none';
-
-      setTimeout(function() {
-        if (snapped) floatCta.classList.remove('visible');
-      }, 650);
-    }
-
-    // Hero: quando sai da tela → mostra float; quando volta → esconde
-    new IntersectionObserver(function([entry]) {
-      heroInView = entry.isIntersecting;
-      if (heroInView) {
-        hideFloat();
-      } else if (!ctaBtnInView) {
-        showFloat();
+      } else {
+        floatCta.classList.remove('visible');
       }
+    }
+
+    new IntersectionObserver(function([entry]) {
+      heroVisible = entry.isIntersecting;
+      updateFloat();
     }, { threshold: 0.1 }).observe(heroEl);
 
-    // Botão estático do CTA: quando entra na tela → snap; quando sai → mostra float
     new IntersectionObserver(function([entry]) {
-      ctaBtnInView = entry.isIntersecting;
-      if (ctaBtnInView) {
-        if (floatCta.classList.contains('visible') && !snapped) {
-          snapToStatic();
-        } else {
-          floatCta.classList.remove('visible');
-        }
-      } else {
-        if (!heroInView) showFloat();
-      }
-    }, { threshold: 0.4 }).observe(staticCtaBtn);
+      ctaVisible = entry.isIntersecting;
+      updateFloat();
+    }, { threshold: 0.1 }).observe(staticCtaBtn);
   </script>
 
 </body>
