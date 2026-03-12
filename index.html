@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
@@ -18,7 +17,6 @@
        Dispara PageView em todas as páginas.
        Evento de Lead é disparado no clique dos botões do WhatsApp (ver script no final).
        ===================================================== -->
-
   <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -31,7 +29,6 @@
     fbq('init', '2178268112710607');
     fbq('track', 'PageView');
   </script>
-
   <noscript>
     <img height="1" width="1" style="display:none"
          src="https://www.facebook.com/tr?id=2178268112710607&ev=PageView&noscript=1"/>
@@ -52,7 +49,6 @@
       --gold-line: rgba(196,150,58,0.25);
       --gold-glow: rgba(196,150,58,0.18);
       --pad: 56px;
-      --pad-m: 24px;
     }
 
     html { scroll-behavior: smooth; overflow-x: hidden; }
@@ -248,6 +244,7 @@
       animation: fadeUp 1s 0.36s cubic-bezier(0.16, 1, 0.3, 1) both;
     }
 
+    /* Button */
     .btn {
       display: inline-flex;
       align-items: center;
@@ -307,7 +304,7 @@
       display: flex;
       flex-shrink: 0;
       min-width: max-content;
-      animation: scroll 28s linear infinite;
+      animation: scroll 56s linear infinite;
       will-change: transform;
     }
     .marquee-track span {
@@ -328,7 +325,7 @@
       align-items: center;
     }
     @keyframes scroll {
-      to { transform: translateX(-50%); }
+      to { transform: translateX(-100%); }
     }
 
     /* Sections */
@@ -440,7 +437,7 @@
       margin: 0 auto;
     }
 
-    /* CTA */
+    /* CTA section */
     .cta {
       position: relative;
       padding: 110px var(--pad);
@@ -539,13 +536,12 @@
     footer a:hover { color: var(--gold); }
 
     /* =====================================================
-       Floating CTA — z-index 1001 (above grain overlay 999
-       and above header 100)
+       Floating CTA — centralizado, z-index 1001
        ===================================================== */
     #floatCta {
       position: fixed !important;
       bottom: 32px;
-      right: 32px;
+      left: 50%;
       z-index: 1001;
       display: inline-flex;
       align-items: center;
@@ -558,9 +554,10 @@
       letter-spacing: 0.25em;
       text-transform: uppercase;
       padding: 20px 48px;
+      border-radius: 12px;
       box-shadow: 0 8px 32px rgba(196,150,58,0.25), 0 2px 8px rgba(0,0,0,0.4);
       opacity: 0;
-      transform: translateY(16px);
+      transform: translateX(-50%) translateY(16px);
       pointer-events: none;
       transition: opacity 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
       overflow: hidden;
@@ -575,7 +572,7 @@
     }
     #floatCta.visible {
       opacity: 1;
-      transform: translateY(0);
+      transform: translateX(-50%) translateY(0);
       pointer-events: auto;
     }
     #floatCta:hover {
@@ -663,14 +660,17 @@
       footer { padding: 32px var(--pad); flex-direction: column; gap: 12px; }
       .btn { padding: 18px 36px; font-size: 10px; }
 
-      /* Floating CTA: compact on mobile */
+      /* Floating CTA: largura total no mobile */
       #floatCta {
         bottom: 20px;
-        right: 16px;
-        padding: 16px 28px;
-        font-size: 10px;
-        gap: 12px;
-        letter-spacing: 0.18em;
+        left: var(--pad);
+        right: var(--pad);
+        transform: translateY(16px);
+        justify-content: center;
+        border-radius: 8px;
+      }
+      #floatCta.visible {
+        transform: translateY(0);
       }
       #floatCta .btn-arrow { display: none; }
     }
@@ -704,87 +704,87 @@
       </div>
     </div>
 
-<div class="marquee" role="marquee" aria-label="Informações em destaque">
-  <div class="marquee-track">
-    <span>Fechamentos Realistas</span><span class="dot">✦</span>
-    <span>Goiânia · Goiás</span><span class="dot">✦</span>
-    <span>Alto Padrão</span><span class="dot">✦</span>
-    <span>Atendimento Exclusivo</span><span class="dot">✦</span>
-    <span>Um Projeto por Dia</span><span class="dot">✦</span>
-    <span>@quiel.tattoo</span><span class="dot">✦</span>
-  </div>
-  <div class="marquee-track" aria-hidden="true">
-    <span>Fechamentos Realistas</span><span class="dot">✦</span>
-    <span>Goiânia · Goiás</span><span class="dot">✦</span>
-    <span>Alto Padrão</span><span class="dot">✦</span>
-    <span>Atendimento Exclusivo</span><span class="dot">✦</span>
-    <span>Um Projeto por Dia</span><span class="dot">✦</span>
-    <span>@quiel.tattoo</span><span class="dot">✦</span>
-  </div>
-</div>
-
-<section id="regras" style="padding-bottom:8px">
-  <div class="label label--section fade-in">Antes de agendar</div>
-  <h2 class="fade-in">Leia com<br><em>atenção</em></h2>
-  <div class="divider fade-in"></div>
-  <ul class="rules">
-    <li>Referências são bem-vindas e fazem parte do processo. Uso sua referência como ponto de partida, sempre adicionando sofisticação e um toque próprio ao resultado final.</li>
-    <li>Seu projeto é criado na sessão, junto com você — cada detalhe pensado na hora, do jeito que você sempre imaginou. Nada é feito antes, porque nada deve existir antes de você.</li>
-    <li>O sinal não é reembolsável. Em caso de reagendamento, avise com no mínimo 7 dias de antecedência para não perdê-lo.</li>
-    <li>Venha bem alimentado e descansado no dia da sessão. Evite consumo de álcool nos dias anteriores.</li>
-    <li>Não é permitida a presença de acompanhantes durante a sessão.</li>
-    <li>Caso tenha qualquer problema de saúde, alergia ou condição relevante, informe antes do agendamento.</li>
-    <li>Atendimento exclusivo: realizo apenas um projeto por dia para garantir total dedicação ao seu trabalho.</li>
-  </ul>
-</section>
-
-<div class="ornament">· · ✦ · ·</div>
-
-<section id="processo" style="padding-top:0">
-  <div class="label label--section fade-in">Como funciona</div>
-  <h2 class="fade-in">O processo de<br><em>agendamento</em></h2>
-  <div class="divider fade-in"></div>
-  <div class="process">
-    <div class="process-item">
-      <div class="process-num">01</div>
-      <div class="process-title">Envie sua ideia</div>
-      <p class="process-text">Entre em contato pelo WhatsApp com seu nome, idade, parte do corpo e foto de referência do projeto.</p>
+    <div class="marquee" role="marquee" aria-label="Informações em destaque">
+      <div class="marquee-track">
+        <span>Fechamentos Realistas</span><span class="dot">✦</span>
+        <span>Goiânia · Goiás</span><span class="dot">✦</span>
+        <span>Alto Padrão</span><span class="dot">✦</span>
+        <span>Atendimento Exclusivo</span><span class="dot">✦</span>
+        <span>Um Projeto por Dia</span><span class="dot">✦</span>
+        <span>@quiel.tattoo</span><span class="dot">✦</span>
+      </div>
+      <div class="marquee-track" aria-hidden="true">
+        <span>Fechamentos Realistas</span><span class="dot">✦</span>
+        <span>Goiânia · Goiás</span><span class="dot">✦</span>
+        <span>Alto Padrão</span><span class="dot">✦</span>
+        <span>Atendimento Exclusivo</span><span class="dot">✦</span>
+        <span>Um Projeto por Dia</span><span class="dot">✦</span>
+        <span>@quiel.tattoo</span><span class="dot">✦</span>
+      </div>
     </div>
-    <div class="process-item">
-      <div class="process-num">02</div>
-      <div class="process-title">Avaliação do projeto</div>
-      <p class="process-text">Analiso se o projeto é compatível com meu trabalho antes de discutir datas e sinal.</p>
-    </div>
-    <div class="process-item">
-      <div class="process-num">03</div>
-      <div class="process-title">Confirmação e sinal</div>
-      <p class="process-text">Confirmado o projeto, o sinal é necessário para garantir sua data. Sem sinal, a data não é reservada.</p>
-    </div>
-    <div class="process-item">
-      <div class="process-num">04</div>
-      <div class="process-title">Sessão</div>
-      <p class="process-text">O projeto é criado no dia da sessão, junto com você. Isso garante exclusividade total — sua arte não existe antes de existir em você.</p>
-    </div>
-  </div>
-</section>
 
-<div class="cta" id="agendar">
-  <div class="line-bottom"></div>
-  <span class="cta-eyebrow fade-in">Atendimento exclusivo</span>
-  <h2 class="fade-in">Pronto para<br><em>começar seu projeto?</em></h2>
-  <div class="divider fade-in"></div>
-  <p class="cta-sub fade-in">Leu tudo acima? Então vamos conversar.</p>
-  <div class="fade-in">
-    <a href="https://wa.me/5562991182405?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento" class="btn js-whatsapp" target="_blank" rel="noopener noreferrer">
-      <span>Prosseguir para orçamento</span>
-      <svg class="btn-arrow" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-    </a>
-  </div>
-  <div class="cta-info fade-in">
-    <strong>Estúdio</strong> — Bairro Ilda, Goiânia · próximo à Av. Rio Verde<br>
-    <strong>Instagram</strong> — <a href="https://instagram.com/quiel.tattoo" target="_blank" rel="noopener noreferrer">@quiel.tattoo</a>
-  </div>
-</div>
+    <section id="regras" style="padding-bottom:8px">
+      <div class="label label--section fade-in">Antes de agendar</div>
+      <h2 class="fade-in">Leia com<br><em>atenção</em></h2>
+      <div class="divider fade-in"></div>
+      <ul class="rules">
+        <li>Referências são bem-vindas e fazem parte do processo. Uso sua referência como ponto de partida, sempre adicionando sofisticação e um toque próprio ao resultado final.</li>
+        <li>Seu projeto é criado na sessão, junto com você — cada detalhe pensado na hora, do jeito que você sempre imaginou. Nada é feito antes, porque nada deve existir antes de você.</li>
+        <li>O sinal não é reembolsável. Em caso de reagendamento, avise com no mínimo 7 dias de antecedência para não perdê-lo.</li>
+        <li>Venha bem alimentado e descansado no dia da sessão. Evite consumo de álcool nos dias anteriores.</li>
+        <li>Não é permitida a presença de acompanhantes durante a sessão.</li>
+        <li>Caso tenha qualquer problema de saúde, alergia ou condição relevante, informe antes do agendamento.</li>
+        <li>Atendimento exclusivo: realizo apenas um projeto por dia para garantir total dedicação ao seu trabalho.</li>
+      </ul>
+    </section>
+
+    <div class="ornament">· · ✦ · ·</div>
+
+    <section id="processo" style="padding-top:0">
+      <div class="label label--section fade-in">Como funciona</div>
+      <h2 class="fade-in">O processo de<br><em>agendamento</em></h2>
+      <div class="divider fade-in"></div>
+      <div class="process">
+        <div class="process-item">
+          <div class="process-num">01</div>
+          <div class="process-title">Envie sua ideia</div>
+          <p class="process-text">Entre em contato pelo WhatsApp com seu nome, idade, parte do corpo e foto de referência do projeto.</p>
+        </div>
+        <div class="process-item">
+          <div class="process-num">02</div>
+          <div class="process-title">Avaliação do projeto</div>
+          <p class="process-text">Analiso se o projeto é compatível com meu trabalho antes de discutir datas e sinal.</p>
+        </div>
+        <div class="process-item">
+          <div class="process-num">03</div>
+          <div class="process-title">Confirmação e sinal</div>
+          <p class="process-text">Confirmado o projeto, o sinal é necessário para garantir sua data. Sem sinal, a data não é reservada.</p>
+        </div>
+        <div class="process-item">
+          <div class="process-num">04</div>
+          <div class="process-title">Sessão</div>
+          <p class="process-text">O projeto é criado no dia da sessão, junto com você. Isso garante exclusividade total — sua arte não existe antes de existir em você.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="cta" id="agendar">
+      <div class="line-bottom"></div>
+      <span class="cta-eyebrow fade-in">Atendimento exclusivo</span>
+      <h2 class="fade-in">Pronto para<br><em>começar seu projeto?</em></h2>
+      <div class="divider fade-in"></div>
+      <p class="cta-sub fade-in">Leu tudo acima? Então vamos conversar.</p>
+      <div class="fade-in">
+        <a href="https://wa.me/5562991182405?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento" class="btn js-whatsapp" target="_blank" rel="noopener noreferrer">
+          <span>Prosseguir para orçamento</span>
+          <svg class="btn-arrow" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+      </div>
+      <div class="cta-info fade-in">
+        <strong>Estúdio</strong> — Bairro Ilda, Goiânia · próximo à Av. Rio Verde<br>
+        <strong>Instagram</strong> — <a href="https://instagram.com/quiel.tattoo" target="_blank" rel="noopener noreferrer">@quiel.tattoo</a>
+      </div>
+    </div>
 
   </main>
 
@@ -793,25 +793,21 @@
     <div><a href="https://instagram.com/quiel.tattoo" target="_blank" rel="noopener noreferrer">@quiel.tattoo</a></div>
   </footer>
 
-  <!-- Floating CTA — fixed bottom-right, above grain overlay (z-index 1001) -->
-
-<a
-  href=”https://wa.me/5562991182405?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento”
-  class=”float-cta js-whatsapp”
-  id=”floatCta”
-  target=”_blank”
-  rel=”noopener noreferrer”
-  aria-label=”Prosseguir para orçamento pelo WhatsApp”
->
-  <span>Prosseguir para orçamento</span>
-  <svg class=”btn-arrow” viewBox=”0 0 16 16”><path d=”M3 8h10M9 4l4 4-4 4”/></svg>
-</a>
+  <!-- Floating CTA — fixed centralizado, z-index 1001 -->
+  <a
+    href="https://wa.me/5562991182405?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento"
+    class="js-whatsapp"
+    id="floatCta"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Solicitar orçamento pelo WhatsApp"
+  >
+    <span>Solicitar orçamento</span>
+    <svg class="btn-arrow" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+  </a>
 
   <script>
-    // =====================================================
-    // EVENTO DE LEAD — dispara fbq('track', 'Lead') em
-    // TODOS os botões que levam ao WhatsApp (classe .js-whatsapp)
-    // =====================================================
+    // Evento de Lead — dispara fbq('track', 'Lead') em todos os botões WhatsApp
     document.querySelectorAll('.js-whatsapp').forEach(function(btn) {
       btn.addEventListener('click', function() {
         if (typeof fbq === 'function') {
@@ -823,7 +819,7 @@
       });
     });
 
-    // Scroll-triggered fade-in with staggered delays for list/grid items
+    // Scroll-triggered fade-in
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -835,7 +831,7 @@
 
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-    // Stagger rules <li> individually
+    // Stagger rules <li>
     const rulesObs = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
