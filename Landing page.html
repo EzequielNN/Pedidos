@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiel Tattoo — Fechamentos Realistas · Goiânia</title>
+  <meta name="description" content="Fechamentos realistas de alto padrão em Goiânia. Atendimento exclusivo, um projeto por dia. Agende seu orçamento com Quiel Tattoo.">
+  <meta property="og:title" content="Quiel Tattoo — Fechamentos Realistas · Goiânia">
+  <meta property="og:description" content="Fechamentos realistas de alto padrão. Atendimento exclusivo, um projeto por dia.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#c4963a">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Raleway:wght@200;300;400;500&display=swap" rel="stylesheet">
+
+  <!-- =====================================================
+       META PIXEL — ID: 2178268112710607
+       Dispara PageView em todas as páginas.
+       Evento de Lead é disparado no clique dos botões do WhatsApp (ver script no final).
+       ===================================================== -->
+
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2178268112710607');
+    fbq('track', 'PageView');
+  </script>
+
+  <noscript>
+    <img height="1" width="1" style="display:none"
+         src="https://www.facebook.com/tr?id=2178268112710607&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- FIM META PIXEL -->
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #0c0d10;
+      --deep: #131417;
+      --surface: #1a1c21;
+      --white: #f0ece4;
+      --muted: #c0bbb2;
+      --gold: #c4963a;
+      --gold-bright: #e2b85a;
+      --gold-line: rgba(196,150,58,0.25);
+      --gold-glow: rgba(196,150,58,0.18);
+      --pad: 56px;
+      --pad-m: 24px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font: 300 15px/1.6 'Raleway', sans-serif;
+      letter-spacing: 0.04em;
+      overflow-x: hidden;
+    }
+
+    /* Grain overlay */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 999;
+    }
+
+    /* Reusable */
+    .serif { font-family: 'Cormorant Garamond', serif; }
+    em { font-style: italic; color: var(--gold); }
+
+    .label {
+      font-size: 10px;
+      letter-spacing: 0.5em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .divider {
+      width: 48px;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold), transparent);
+      margin-bottom: 40px;
+    }
+
+    .gold-line-h {
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold), transparent);
+    }
+
+    h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(36px, 4.5vw, 56px);
+      font-weight: 300;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+
+    /* Header */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 24px var(--pad);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(7,8,10,0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--gold-line);
+      transition: padding 0.4s ease, background 0.4s ease;
+    }
+
+    header.scrolled {
+      padding: 16px var(--pad);
+      background: rgba(7,8,10,0.95);
+    }
+
+    .logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+    }
+
+    .header-loc {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      margin-left: 40px;
+      transition: color 0.4s;
+      position: relative;
+    }
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px; left: 0; right: 0;
+      height: 1px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    nav a:hover { color: var(--gold); }
+    nav a:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 130px var(--pad) 56px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      bottom: -100px; right: -150px;
+      width: 700px; height: 700px;
+      background: radial-gradient(ellipse, rgba(196,150,58,0.08), transparent 65%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 10%; right: 10%;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold), transparent);
+    }
+
+    .hero-ghost {
+      position: absolute;
+      right: -40px; top: 50%;
+      transform: translateY(-50%);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(120px, 18vw, 240px);
+      font-style: italic;
+      font-weight: 300;
+      color: rgba(196,150,58,0.03);
+      pointer-events: none;
+      user-select: none;
+      white-space: nowrap;
+    }
+
+    .hero .label {
+      margin-bottom: 24px;
+      animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+    .hero .label::before {
+      content: '';
+      width: 48px; height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold));
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(56px, 8vw, 108px);
+      font-weight: 300;
+      line-height: 1;
+      letter-spacing: -0.01em;
+      margin-bottom: 28px;
+      animation: fadeUp 1s 0.12s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    .hero .divider {
+      animation: fadeUp 1s 0.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    .hero-sub {
+      color: var(--muted);
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      max-width: 380px;
+      line-height: 1.6;
+      margin-bottom: 40px;
+      animation: fadeUp 1s 0.28s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    .hero-cta {
+      animation: fadeUp 1s 0.36s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 16px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-bright));
+      color: var(--black);
+      text-decoration: none;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      padding: 20px 48px;
+      position: relative;
+      overflow: hidden;
+      transition: box-shadow 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                  transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      box-shadow: 0 8px 32px rgba(196,150,58,0.25), 0 2px 8px rgba(0,0,0,0.4);
+    }
+    .btn::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--gold-bright), var(--gold));
+      opacity: 0;
+      transition: opacity 0.5s;
+    }
+    .btn span, .btn svg { position: relative; z-index: 1; }
+    .btn .btn-arrow {
+      transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .btn:hover {
+      box-shadow: 0 12px 48px rgba(196,150,58,0.4), 0 4px 16px rgba(0,0,0,0.4);
+      transform: translateY(-2px);
+    }
+    .btn:hover::before { opacity: 1; }
+    .btn:hover .btn-arrow { transform: translateX(4px); }
+
+    .btn-arrow {
+      width: 14px; height: 14px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* Marquee */
+    .marquee {
+      overflow: hidden;
+      border-top: 1px solid var(--gold-line);
+      border-bottom: 1px solid var(--gold-line);
+      padding: 18px 0;
+      background: var(--deep);
+      display: flex;
+    }
+    .marquee-track {
+      display: flex;
+      flex-shrink: 0;
+      min-width: max-content;
+      animation: scroll 28s linear infinite;
+      will-change: transform;
+    }
+    .marquee-track span {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 14px;
+      font-style: italic;
+      color: var(--gold-bright);
+      letter-spacing: 0.2em;
+      padding: 0 48px;
+      opacity: 0.9;
+    }
+    .marquee-track .dot {
+      color: rgba(196,150,58,0.5);
+      padding: 0;
+      font-style: normal;
+      font-size: 8px;
+      display: flex;
+      align-items: center;
+    }
+    @keyframes scroll {
+      to { transform: translateX(-50%); }
+    }
+
+    /* Sections */
+    section {
+      padding: 80px var(--pad);
+      max-width: 1000px;
+      margin: 0 auto;
+      scroll-margin-top: 80px;
+    }
+
+    .label--section::after {
+      content: '';
+      flex: 1; height: 1px;
+      background: linear-gradient(to right, var(--gold-line), transparent);
+    }
+
+    /* Rules */
+    .rules {
+      list-style: none;
+      border-top: 1px solid rgba(196,150,58,0.15);
+    }
+    .rules li {
+      padding: 24px 0;
+      border-bottom: 1px solid rgba(196,150,58,0.15);
+      display: grid;
+      grid-template-columns: 32px 1fr;
+      gap: 28px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.65;
+      align-items: start;
+      transition: color 0.4s, padding-left 0.4s;
+    }
+    .rules li:hover {
+      color: var(--white);
+      padding-left: 4px;
+    }
+    .rules li::before {
+      content: '—';
+      color: var(--gold);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      padding-top: 2px;
+    }
+
+    /* Process */
+    .process {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: rgba(196,150,58,0.2);
+    }
+    .process-item {
+      background: var(--deep);
+      padding: 40px 36px;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.5s ease;
+    }
+    .process-item::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at top left, rgba(196,150,58,0.12), transparent 60%);
+      opacity: 0;
+      transition: opacity 0.6s ease;
+    }
+    .process-item:hover { background: var(--surface); }
+    .process-item:hover::before { opacity: 1; }
+
+    .process-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 72px;
+      font-weight: 300;
+      color: rgba(196,150,58,0.1);
+      line-height: 1;
+      margin-bottom: 20px;
+      position: relative;
+      transition: color 0.5s ease;
+    }
+    .process-item:hover .process-num {
+      color: rgba(196,150,58,0.18);
+    }
+    .process-title {
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold-bright);
+      margin-bottom: 14px;
+      position: relative;
+    }
+    .process-text {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.65;
+      position: relative;
+    }
+
+    /* Ornament */
+    .ornament {
+      text-align: center;
+      padding: 20px 0;
+      color: rgba(196,150,58,0.45);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      letter-spacing: 0.6em;
+      user-select: none;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    /* CTA */
+    .cta {
+      position: relative;
+      padding: 110px var(--pad);
+      text-align: center;
+      overflow: hidden;
+      background: var(--black);
+      scroll-margin-top: 80px;
+    }
+    .cta::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 700px; height: 500px;
+      background: radial-gradient(ellipse, rgba(196,150,58,0.13), transparent 65%);
+      pointer-events: none;
+    }
+    .cta::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 10%; right: 10%;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold), transparent);
+    }
+    .cta .line-bottom {
+      position: absolute;
+      bottom: 0; left: 10%; right: 10%;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold-line), transparent);
+    }
+    .cta-eyebrow {
+      font-size: 10px;
+      letter-spacing: 0.5em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 28px;
+      display: block;
+      position: relative;
+    }
+    .cta h2 {
+      font-size: clamp(40px, 5vw, 64px);
+      margin-bottom: 16px;
+      line-height: 1.05;
+      position: relative;
+    }
+    .cta-sub {
+      color: var(--muted);
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      margin-bottom: 52px;
+      line-height: 1.6;
+      position: relative;
+    }
+    .cta .divider {
+      width: 60px;
+      margin: 0 auto 52px;
+      position: relative;
+    }
+    .cta .btn {
+      position: relative;
+    }
+    .cta-info {
+      margin-top: 52px;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      color: var(--muted);
+      line-height: 1.8;
+      position: relative;
+    }
+    .cta-info strong {
+      color: var(--gold);
+      font-weight: 400;
+    }
+    .cta-info a {
+      color: var(--gold);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .cta-info a:hover {
+      color: var(--gold-bright);
+    }
+
+    /* Footer */
+    footer {
+      padding: 40px var(--pad);
+      border-top: 1px solid rgba(196,150,58,0.15);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: rgba(196,150,58,0.4);
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+    footer a { color: inherit; text-decoration: none; transition: color 0.3s; }
+    footer a:hover { color: var(--gold); }
+
+    /* =====================================================
+       Floating CTA — z-index 1001 (above grain overlay 999
+       and above header 100)
+       ===================================================== */
+    .float-cta {
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      z-index: 1001;
+      display: inline-flex;
+      align-items: center;
+      gap: 16px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-bright));
+      color: var(--black);
+      text-decoration: none;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      padding: 20px 48px;
+      box-shadow: 0 8px 32px rgba(196,150,58,0.25), 0 2px 8px rgba(0,0,0,0.4);
+      opacity: 0;
+      transform: translateY(16px);
+      pointer-events: none;
+      transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+                  box-shadow 0.4s ease;
+      overflow: hidden;
+      will-change: transform, opacity;
+    }
+    .float-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--gold-bright), var(--gold));
+      opacity: 0;
+      transition: opacity 0.5s;
+    }
+    .float-cta.visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    .float-cta.snapping {
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                  opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+    .float-cta:hover {
+      box-shadow: 0 12px 48px rgba(196,150,58,0.4), 0 4px 16px rgba(0,0,0,0.4);
+    }
+    .float-cta:hover::before { opacity: 1; }
+    .float-cta svg,
+    .float-cta span { position: relative; z-index: 1; }
+    .float-cta .btn-arrow {
+      transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .float-cta:hover .btn-arrow { transform: translateX(4px); }
+
+    /* Animations */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* Stagger individual items */
+    .rules li {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                  color 0.4s,
+                  padding-left 0.4s;
+    }
+    .rules li.visible { opacity: 1; transform: translateY(0); }
+
+    .process-item {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                  background 0.5s ease;
+    }
+    .process-item.visible { opacity: 1; transform: translateY(0); }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      .fade-in, .rules li, .process-item { opacity: 1; transform: none; }
+      .marquee-track { animation: none; }
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      :root { --pad: 24px; }
+      header { justify-content: center; padding: 20px var(--pad); }
+      header.scrolled { padding: 14px var(--pad); }
+      nav, .header-loc { display: none; }
+      .hero {
+        padding: 88px var(--pad) 48px;
+        min-height: auto;
+        justify-content: flex-start;
+      }
+      .hero::before, .hero-ghost { display: none; }
+      .hero::after { left: var(--pad); right: var(--pad); }
+      .hero .label { margin-bottom: 16px; }
+      h1 { margin-bottom: 16px; }
+      .hero .divider { margin-bottom: 16px; }
+      .hero-sub { margin-bottom: 28px; }
+      section { padding: 48px var(--pad); }
+      .divider { margin-bottom: 28px; }
+      .process { grid-template-columns: 1fr; }
+      .cta { padding: 64px var(--pad); }
+      .cta::after { left: var(--pad); right: var(--pad); }
+      .cta .line-bottom { left: var(--pad); right: var(--pad); }
+      .cta .divider { margin-bottom: 36px; }
+      .cta-sub { margin-bottom: 36px; }
+      footer { padding: 32px var(--pad); flex-direction: column; gap: 12px; }
+      .btn { padding: 18px 36px; font-size: 10px; }
+
+      /* Floating CTA: compact on mobile */
+      .float-cta {
+        bottom: 20px;
+        right: 16px;
+        padding: 16px 28px;
+        font-size: 10px;
+        gap: 12px;
+        letter-spacing: 0.18em;
+      }
+      .float-cta .btn-arrow { display: none; }
+    }
+  </style>
+
+</head>
+<body>
+
+  <header>
+    <div class="logo">Quiel<em>.</em>Tattoo</div>
+    <div class="header-loc">Goiânia — Bairro Ilda</div>
+    <nav>
+      <a href="#regras">Antes de agendar</a>
+      <a href="#processo">Processo</a>
+      <a href="#agendar">Orçamento</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <div class="hero-ghost">Quiel</div>
+      <div class="label">Goiânia — Bairro Ilda</div>
+      <h1>Fechamentos<br><em>realistas</em> de alto padrão</h1>
+      <div class="divider"></div>
+      <p class="hero-sub">Atendimento exclusivo. Um projeto por dia.<br>Leia as informações abaixo antes de entrar em contato.</p>
+      <div class="hero-cta">
+        <a href="https://wa.me/5562991182405?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento" class="btn js-whatsapp" target="_blank" rel="noopener noreferrer">
+          <span>Solicitar orçamento</span>
+          <svg class="btn-arrow" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+      </div>
+    </div>
+
+<div class="marquee" role="marquee" aria-label="Informações em destaque">
+  <div class="marquee-track">
+    <span>Fechamentos Realistas</span><span class="dot">✦</span>
+    <span>Goiânia · Goiás</span><span class="dot">✦</span>
+    <span>Alto Padrão</span><span class="dot">✦</span>
+    <span>Atendimento Exclusivo</span><span class="dot">✦</span>
+    <span>Um Projeto por Dia</span><span class="dot">✦</span>
+    <span>@quiel.tattoo</span><span class="dot">✦</span>
+  </div>
+  <div class="marquee-track" aria-hidden="true">
+    <span>Fechamentos Realistas</span><span class="dot">✦</span>
+    <span>Goiânia · Goiás</span><span class="dot">✦</span>
+    <span>Alto Padrão</span><span class="dot">✦</span>
+    <span>Atendimento Exclusivo</span><span class="dot">✦</span>
+    <span>Um Projeto por Dia</span><span class="dot">✦</span>
+    <span>@quiel.tattoo</span><span class="dot">✦</span>
+  </div>
+</div>
+
+<section id="regras" style="padding-bottom:8px">
+  <div class="label label--section fade-in">Antes de agendar</div>
+  <h2 class="fade-in">Leia com<br><em>atenção</em></h2>
+  <div class="divider fade-in"></div>
+  <ul class="rules">
+    <li>Referências são bem-vindas e fazem parte do processo. Uso sua referência como ponto de partida, sempre adicionando sofisticação e um toque próprio ao resultado final.</li>
+    <li>Seu projeto é criado na sessão, junto com você — cada detalhe pensado na hora, do jeito que você sempre imaginou. Nada é feito antes, porque nada deve existir antes de você.</li>
+    <li>O sinal não é reembolsável. Em caso de reagendamento, avise com no mínimo 7 dias de antecedência para não perdê-lo.</li>
+    <li>Venha bem alimentado e descansado no dia da sessão. Evite consumo de álcool nos dias anteriores.</li>
+    <li>Não é permitida a presença de acompanhantes durante a sessão.</li>
+    <li>Caso tenha qualquer problema de saúde, alergia ou condição relevante, informe antes do agendamento.</li>
+    <li>Atendimento exclusivo: realizo apenas um projeto por dia para garantir total dedicação ao seu trabalho.</li>
+  </ul>
+</section>
+
+<div class="ornament">· · ✦ · ·</div>
+
+<section id="processo" style="padding-top:0">
+  <div class="label label--section fade-in">Como funciona</div>
+  <h2 class="fade-in">O processo de<br><em>agendamento</em></h2>
+  <div class="divider fade-in"></div>
+  <div class="process">
+    <div class="process-item">
+      <div class="process-num">01</div>
+      <div class="process-title">Envie sua ideia</div>
+      <p class="process-text">Entre em contato pelo WhatsApp com seu nome, idade, parte do corpo e foto de referência do projeto.</p>
+    </div>
+    <div class="process-item">
+      <div class="process-num">02</div>
+      <div class="process-title">Avaliação do projeto</div>
+      <p class="process-text">Analiso se o projeto é compatível com meu trabalho antes de discutir datas e sinal.</p>
+    </div>
+    <div class="process-item">
+      <div class="process-num">03</div>
+      <div class="process-title">Confirmação e sinal</div>
+      <p class="process-text">Confirmado o projeto, o sinal é necessário para garantir sua data. Sem sinal, a data não é reservada.</p>
+    </div>
+    <div class="process-item">
+      <div class="process-num">04</div>
+      <div class="process-title">Sessão</div>
+      <p class="process-text">O projeto é criado no dia da sessão, junto com você. Isso garante exclusividade total — sua arte não existe antes de existir em você.</p>
+    </div>
+  </div>
+</section>
+
+<div class="cta" id="agendar">
+  <div class="line-bottom"></div>
+  <span class="cta-eyebrow fade-in">Atendimento exclusivo</span>
+  <h2 class="fade-in">Pronto para<br><em>começar seu projeto?</em></h2>
+  <div class="divider fade-in"></div>
+  <p class="cta-sub fade-in">Leu tudo acima? Então vamos conversar.</p>
+  <div class="fade-in">
+    <a href="https://wa.me/5562991182405?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento" class="btn js-whatsapp" target="_blank" rel="noopener noreferrer">
+      <span>Prosseguir para orçamento</span>
+      <svg class="btn-arrow" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+    </a>
+  </div>
+  <div class="cta-info fade-in">
+    <strong>Estúdio</strong> — Bairro Ilda, Goiânia · próximo à Av. Rio Verde<br>
+    <strong>Instagram</strong> — <a href="https://instagram.com/quiel.tattoo" target="_blank" rel="noopener noreferrer">@quiel.tattoo</a>
+  </div>
+</div>
+
+  </main>
+
+  <footer>
+    <div>© 2026 Quiel Tattoo — Goiânia</div>
+    <div><a href="https://instagram.com/quiel.tattoo" target="_blank" rel="noopener noreferrer">@quiel.tattoo</a></div>
+  </footer>
+
+  <!-- Floating CTA — fixed bottom-right, above grain overlay (z-index 1001) -->
+
+<a
+  href=”https://wa.me/5562991182405?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento”
+  class=”float-cta js-whatsapp”
+  id=”floatCta”
+  target=”_blank”
+  rel=”noopener noreferrer”
+  aria-label=”Prosseguir para orçamento pelo WhatsApp”
+>
+  <span>Prosseguir para orçamento</span>
+  <svg class=”btn-arrow” viewBox=”0 0 16 16”><path d=”M3 8h10M9 4l4 4-4 4”/></svg>
+</a>
+
+  <script>
+    // =====================================================
+    // EVENTO DE LEAD — dispara fbq('track', 'Lead') em
+    // TODOS os botões que levam ao WhatsApp (classe .js-whatsapp)
+    // =====================================================
+    document.querySelectorAll('.js-whatsapp').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        if (typeof fbq === 'function') {
+          fbq('track', 'Lead', {
+            content_name: 'WhatsApp - Orçamento',
+            content_category: 'Fechamento Realista'
+          });
+        }
+      });
+    });
+
+    // Scroll-triggered fade-in with staggered delays for list/grid items
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Stagger rules <li> individually
+    const rulesObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const li = entry.target;
+          const idx = Array.from(li.parentElement.children).indexOf(li);
+          li.style.transitionDelay = `${idx * 0.07}s`;
+          li.classList.add('visible');
+          rulesObs.unobserve(li);
+        }
+      });
+    }, { threshold: 0.05 });
+
+    document.querySelectorAll('.rules li').forEach(li => rulesObs.observe(li));
+
+    // Stagger process items
+    const processObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const item = entry.target;
+          const idx = Array.from(item.parentElement.children).indexOf(item);
+          item.style.transitionDelay = `${idx * 0.1}s`;
+          item.classList.add('visible');
+          processObs.unobserve(item);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.process-item').forEach(el => processObs.observe(el));
+
+    // Header shrink on scroll
+    const header = document.querySelector('header');
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          header.classList.toggle('scrolled', window.scrollY > 60);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+
+    // Floating CTA — aparece após o hero e encaixa no botão estático ao chegar nele
+    const floatCta = document.getElementById('floatCta');
+    const heroEl = document.querySelector('.hero');
+    const staticCtaBtn = document.querySelector('.cta .btn');
+
+    let heroInView = true;
+    let ctaBtnInView = false;
+    let snapped = false;
+
+    function showFloat() {
+      // Desativa transição durante o reset para evitar salto visual
+      floatCta.style.transition = 'none';
+      floatCta.classList.remove('snapping');
+      floatCta.style.transform = '';
+      floatCta.style.opacity = '';
+      floatCta.style.pointerEvents = '';
+      snapped = false;
+      requestAnimationFrame(() => {
+        floatCta.style.transition = '';
+        floatCta.classList.add('visible');
+      });
+    }
+
+    function hideFloat() {
+      floatCta.classList.remove('visible', 'snapping');
+      floatCta.style.transform = '';
+      floatCta.style.opacity = '';
+      floatCta.style.pointerEvents = 'none';
+      snapped = false;
+    }
+
+    function snapToStatic() {
+      const floatRect = floatCta.getBoundingClientRect();
+      const staticRect = staticCtaBtn.getBoundingClientRect();
+      const dx = staticRect.left - floatRect.left;
+      const dy = staticRect.top - floatRect.top;
+
+      snapped = true;
+      floatCta.classList.add('snapping');
+      floatCta.style.transform = 'translate(' + dx + 'px, ' + dy + 'px)';
+      floatCta.style.opacity = '0';
+      floatCta.style.pointerEvents = 'none';
+
+      setTimeout(function() {
+        if (snapped) floatCta.classList.remove('visible');
+      }, 650);
+    }
+
+    // Hero: quando sai da tela → mostra float; quando volta → esconde
+    new IntersectionObserver(function([entry]) {
+      heroInView = entry.isIntersecting;
+      if (heroInView) {
+        hideFloat();
+      } else if (!ctaBtnInView) {
+        showFloat();
+      }
+    }, { threshold: 0.1 }).observe(heroEl);
+
+    // Botão estático do CTA: quando entra na tela → snap; quando sai → mostra float
+    new IntersectionObserver(function([entry]) {
+      ctaBtnInView = entry.isIntersecting;
+      if (ctaBtnInView) {
+        if (floatCta.classList.contains('visible') && !snapped) {
+          snapToStatic();
+        } else {
+          floatCta.classList.remove('visible');
+        }
+      } else {
+        if (!heroInView) showFloat();
+      }
+    }, { threshold: 0.4 }).observe(staticCtaBtn);
+  </script>
+
+</body>
+</html>
